@@ -5,6 +5,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "driver/uart.h"
+#include "esp_sleep.h"
 
 #define SENSOR_PIN 4
 #define COOLDOWN_MS 300
@@ -41,7 +42,7 @@ void sensor_task(void *pvParameters)
             if ((currentTime - lastDetectionTime) > COOLDOWN_MS) 
             {
                 openCounter++;
-                printf("DETECTION: Door %s\n", get_state(currentState));
+                // printf("DETECTION: Door %s\n", get_state(currentState));
                 lastDetectionTime = currentTime;
             }
         }
@@ -50,7 +51,7 @@ void sensor_task(void *pvParameters)
             if ((currentTime - lastDetectionTime) > COOLDOWN_MS) 
             {
                 closeCounter++;
-                printf("DETECTION: Door %s\n",get_state(currentState));
+                // printf("DETECTION: Door %s\n",get_state(currentState));
                 lastDetectionTime = currentTime;
             }
         }
