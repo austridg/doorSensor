@@ -1,4 +1,4 @@
-// door sensor code converted to c
+// door sensor
 #include <stdio.h>
 #include <stdbool.h>
 #include "driver/gpio.h"
