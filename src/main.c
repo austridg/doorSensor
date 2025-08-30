@@ -6,7 +6,7 @@
 #include "freertos/task.h"
 
 #define SENSOR_PIN 4
-#define LED_PIN 5
+#define LED_PIN 2 // onboard led
 #define COOLDOWN_MS 3000
 
 int detectionCounter = 0;
